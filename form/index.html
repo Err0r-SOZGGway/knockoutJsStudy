@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フォーム部品のバインドの学習</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js" integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="sample.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button data-bind="click: onClick">root</button>
+    <div data-bind="with: sub">
+        <button data-bind="click: onClick">sub</button>
+    </div>
+    
+    <div id="square" data-bind="event: param"></div>
+    <form data-bind="submit: onSubmit">
+        <input type="text" />
+        <input type="submit" value="Submit" />
+    </form>
+
+    <button data-bind="enable: isTrue">Enable Button</button>
+    <button data-bind="enable: isFalse">Dnable Button</button>
+    <br>
+    <button data-bind="disable: isTrue">Dnable Button</button>
+    <button data-bind="disable: isFalse">Enable Button</button>
+</body>
+</html>
