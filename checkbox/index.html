@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チェックボックス、セレクトボタンの学習</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js" integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="sample.js"></script>
+</head>
+<body>
+    <input type="checkbox" data-bind="checked: true" />
+    <input type="checkbox" data-bind="checked: false" />
+
+    <br>
+
+    <input type="checkbox" value="hoge" data-bind="checked: array" />
+    <input type="checkbox" value="fuga" data-bind="checked: array" />
+    <input type="checkbox" value="piyo" data-bind="checked: array" />
+
+    <br>
+
+    <input type="radio" name="myRadio" value="a" data-bind="checked: myRadioValue" />
+    <input type="radio" name="myRadio" value="b" data-bind="checked: myRadioValue" />
+    <input type="radio" name="myRadio" value="c" data-bind="checked: myRadioValue" />
+
+    <br>
+
+    <select 
+     data-bind="options: numArray,
+                       optionsValue: toId,
+                       optionsText: toLabel,
+                       value: '2'"></select>
+    
+    <br>
+
+    <select size="3" multiple
+        data-bind="options: strArray,
+                   selectedOptions: selectedArray"></select>
+</body>
+</html>
